@@ -14,3 +14,11 @@ Bu proje, yazılım geliştirme sürecimde öğrendiklerimi sergilemek, kendimi 
 - **Projelerim** – Yer aldığım projelerin listesi
 - **Öneriler** – Ziyaretçilerden gelen geri bildirimler
 - **İletişim** – Bana ulaşabileceğiniz bilgiler/formlar
+
+- 
+## 🔧 Nasıl Çalıştırılır?
+
+1. Bu repoyu klonla:
+```bash
+git clone https://github.com/mehmetyilmazalan/kisisel-web-sayfam.git
+
