@@ -1,0 +1,72 @@
+body{
+    background-color: #c5c6c7;
+}
+
+
+
+header {
+  background-color: #c5c6c7;
+  padding: 20px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.logo {
+  background-color: #c5c6c7;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a {
+  background-color: rgb(177, 185, 185);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+h2{
+  color:rgb(59, 99, 100);
+  padding: 5px;
+  margin-top:20px;
+  margin-left: 150px;
+  
+}
+div p{
+  background-color: rgb(232, 230, 230);
+  padding: 10px;
+  margin-right: 50px;
+  border: 1px dotted rgb(125, 180, 137);
+  border-radius: 10px;
+  text-align: justify;
+}
+
+
+.pp{
+  overflow: hidden;
+  height: 350px;
+  width: 350px;
+  border: 0px solid black;
+  margin: 85px 50px;
+  border-radius: 50%
+}
+.hakkimda-container{
+  display: flex;
+  justify-content:space-between;
+}
+
+footer{
+  margin-top: 180px;
+  padding: 20px;
+  text-align: center;
+}
+
