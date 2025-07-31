@@ -1,34 +1,94 @@
+
 body{
-    background-color: #F0F4F8;
+    background-color: #f5f5f5;
 }
 
 
-
 header {
-  background-color: #f0f4f8;
+  background-color: #f5f5f5;
   padding: 20px 0;
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
   gap: 20px;
 }
 
 .logo {
-  background-color: #F0F4F8;
+  background-color: #f5f5f5;
   padding: 10px;
   text-decoration: none;
   font-weight: bold;
 }
 
 nav a {
-  background-color: rgb(162, 200, 200);
+  background: linear-gradient(90deg, #f8f8f8, #e6e6e6);
+  color: black;
   border-radius: 10px;
   padding: 10px 20px;
   margin: 5px;
   font-size: 18px;
   text-decoration: none;
+  text-align: center;
+}
+
+
+
+
+.proje-container{
+  background-color: #ffffff;
+  text-align: center;
+  width: 1300px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+  
+}
+
+.proje-foto{
+
+  background-color: #fefefe;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  padding: 10px;
+  margin: 20px;
+  
+}
+
+
+.proje-button{ 
+  background-color: #829aac;   
+  color: #000000;
+  display: inline-block;
+  transition: all 0.3s ease;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+ 
+  
+}
+
+
+#dahafazla{
+  margin-top: 180px;
+}
+
+.proje-button:hover{
+  background-color: #636f76;
+transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+.proje-button:active{
+  background-color: antiquewhite;
+}
+
+footer{
+  padding: 20px;
   text-align: center;
 }
