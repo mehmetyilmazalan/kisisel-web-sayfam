@@ -1,28 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="iletisim.css">
-    <title>İletişim</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İletişim</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="iletisim.css">
+  <style>
+    .task-item.completed .task-title {
+      text-decoration: line-through;
+    }
+  </style>
 </head>
 <body>
 
-     <header>
-        <div class="header-container">
-             <a class="logo "href="anasayfa.html"><img src="../Logolar/logo.png" height="50" width="80" alt="Logo" title="Anasayfa">     </a>
+  <header>
+    <div class="header-container">
+      <a class="logo" href="anasayfa.html"><img src="../Logolar/logo.png" height="50" width="80" alt="Logo" title="Anasayfa"></a>
+      <nav>
+        <a href="anasayfa.html" title="Anasayfa">Anasayfa</a>
+        <a href="hakkimda.html" title="Hakkımda">Hakkımda</a>
+        <a href="projelerim.html" title="Projelerim">Projelerim</a>
+        <a href="#öneriler" title="Öneriler">Öneriler</a>
+        <a href="iletisim.html" title="İletişim">İletişim</a>
+      </nav>
+    </div>
+  </header>
 
-        <nav>
-             <a href="anasayfa.html" title="Anasayfa">Anasayfa</a>
-            <a href="hakkimda.html" title="Hakkımda">Hakkımda</a>
-            <a href="projelerim.html" title="Projelerim">Projelerim</a>
-            <a href="#öneriler" title="Öneriler">Öneriler</a>
-            <a href="iletisim.html" title="İletişim">İletişim</a>
+  <div class="container mt-5">
+    <h3 class="text-center mb-4">Randevu Talebi</h3>
+    <form id="randevuForm">
+      <div class="mb-3">
+        <input type="text" id="adInput" class="form-control" placeholder="Ad Soyad" required>
+      </div>
+      <div class="mb-3">
+        <input type="text" id="nedenInput" class="form-control" placeholder="Randevu Nedeni" required>
+      </div>
+      <div class="mb-3">
+        <input type="datetime-local" id="tarihInput" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Oluştur</button>
+    </form>
+  </div>
 
-        </nav>
-            <a class="logo "href="anasayfa.html"><img src="../Logolar/logo.png" height="50" width="80" alt="Logo" title="Anasayfa">     </a>
-         </div>
-    </header>
+  <div class="container mt-4">
+    <ul id="randevuListesi" class="list-group"></ul>
+  </div>
+
+   <footer>
+        <p><em>&copy; 2025 Mehmet Yılmaz Alan</em></p>
+
+    </footer>  
+    
+
+  <script>
+    document.getElementById("randevuForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      addTask();
+    });
+
+    function addTask() {
+      const ad = document.getElementById("adInput").value;
+      const neden = document.getElementById("nedenInput").value;
+      const tarih = document.getElementById("tarihInput").value;
+
+      const taskItem = document.createElement("li");
+      taskItem.className = "list-group-item d-flex justify-content-between align-items-center task-item";
+      taskItem.innerHTML = `
+        <div>
+          <span class="task-title fw-bold">${ad}</span><br>
+          <small class="text-muted">${neden} | Tarih: ${tarih}</small>
+        </div>
+        <div>
+          <button class="btn btn-success btn-sm me-1" onclick="completeTask(this)">Kabul Et</button>
+          <button class="btn btn-warning btn-sm me-1" onclick="editTask(this)">Düzenle</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteTask(this)">Reddet</button>
+        </div>
+      `;
+
+      document.getElementById("randevuListesi").appendChild(taskItem);
+      document.getElementById("randevuForm").reset();
+    }
+
+    function completeTask(button) {
+      const item = button.closest(".task-item");
+      item.classList.toggle("completed");
+    }
+
+    function editTask(button) {
+      const item = button.closest(".task-item");
+      const ad = item.querySelector(".task-title").textContent;
+      const detay = item.querySelector("small").textContent;
+      const [nedenText, tarihText] = detay.split("|");
+
+      document.getElementById("adInput").value = ad;
+      document.getElementById("nedenInput").value = nedenText.trim();
+      document.getElementById("tarihInput").value = tarihText.replace("Tarih:", "").trim();
+      item.remove();
+    }
+
+    function deleteTask(button) {
+      button.closest(".task-item").remove();
+    }
+  </script>
+
     
 </body>
 </html>
